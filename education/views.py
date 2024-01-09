@@ -73,10 +73,6 @@ class SubmitAnswersAPIView(APIView):
         test_id = request.data.get('test')
         answers_data = request.data.get('answers')
 
-        # Получаем тест и его вопросы
-        test = get_object_or_404(Test, id=test_id)
-        questions = test.questions.all()
-
         # Логика проверки ответов
         result_data = {'test_id': test_id, 'answers': []}
 

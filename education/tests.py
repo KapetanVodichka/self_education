@@ -12,10 +12,6 @@ class CourseTestCase(APITestCase):
         self.client.force_authenticate(user=self.teacher)
 
     def test_list_courses(self):
-        data = {
-            'title': 'Test Course',
-            'description': 'Course for testing',
-        }
 
         response = self.client.get('/courses/')
 
