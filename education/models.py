@@ -1,7 +1,4 @@
-from django.contrib.postgres.fields import ArrayField
 from django.db import models
-
-from config import settings
 
 
 class Course(models.Model):
@@ -35,4 +32,3 @@ class Question(models.Model):
     test = models.ForeignKey(Test, on_delete=models.CASCADE, related_name='questions', verbose_name='Тест')
     text = models.TextField(verbose_name='Текст вопроса')
     correct_answer = models.CharField(max_length=50, verbose_name='Текст правильного ответа')
-

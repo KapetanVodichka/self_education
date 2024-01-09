@@ -17,8 +17,6 @@ class CourseTestCase(APITestCase):
             'description': 'Course for testing',
         }
 
-        course = Course.objects.create(**data)
-
         response = self.client.get('/courses/')
 
         self.assertEqual(
@@ -105,7 +103,6 @@ class QuestionViewSetTestCase(APITestCase):
     def test_create_question(self):
         response = self.client.post(reverse('question-list'), self.question_data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
 
     def test_retrieve_question(self):
         test = Test.objects.create(lesson=self.lesson)
