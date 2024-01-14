@@ -73,7 +73,6 @@ class SubmitAnswersAPIView(APIView):
         test_id = request.data.get('test')
         answers_data = request.data.get('answers')
 
-        # Логика проверки ответов
         result_data = {'test_id': test_id, 'answers': []}
 
         for answer_data in answers_data:

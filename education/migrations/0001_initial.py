@@ -30,7 +30,8 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=100, verbose_name='Название урока')),
                 ('description', models.TextField(verbose_name='Содержание урока')),
-                ('course', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='lessons', to='education.course', verbose_name='Курс')),
+                ('course', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='lessons',
+                                             to='education.course', verbose_name='Курс')),
             ],
             options={
                 'verbose_name': 'Урок',
@@ -41,7 +42,8 @@ class Migration(migrations.Migration):
             name='Test',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('lesson', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tests', to='education.lesson', verbose_name='Урок')),
+                ('lesson', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='tests',
+                                             to='education.lesson', verbose_name='Урок')),
             ],
             options={
                 'verbose_name': 'Тест урока',
@@ -54,7 +56,8 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('text', models.TextField(verbose_name='Текст вопроса')),
                 ('correct_answer', models.CharField(max_length=50, verbose_name='Текст правильного ответа')),
-                ('test', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questions', to='education.test', verbose_name='Тест')),
+                ('test', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questions',
+                                           to='education.test', verbose_name='Тест')),
             ],
         ),
     ]
